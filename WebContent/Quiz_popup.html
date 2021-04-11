@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>우편번호</title>
+	<script type="text/javascript">
+			 function zipSearch(add){
+				let zip = add.substring(0,7);
+				let addr = add.substr(8);
+				
+				window.opener.signForm.userZipCode.value=zip;
+				opener.signForm.userAddr1.value=addr;
+				window.close();
+				
+			} 
+	</script>
+</head>
+<body>
+	<h3>DB연결 검색한 결과 출력된 화면(선택)</h3>
+	<form action="" name="zipform">
+		<input type="button" value="200-300 서울시 강남구 역삼동"  onclick="zipSearch(this.value)"><br>
+		<input type="button" value="200-400 경기도 성남시 삼평동"  onclick="zipSearch(this.value)"><br>
+		<input type="button" value="300-100 제주시 서귀포동"      onclick="zipSearch(this.value)"><br>
+		<input type="button" value="400-200 전주시 효자동"      onclick="zipSearch(this.value)"><br>
+		<input type="button" value="500-500 부산시 해운대동"     onclick="zipSearch(this.value)"><br>
+		<input type="button" value="600-600 청주시 모충동"      onclick="zipSearch(this.value)"><br>	
+	</form>
+</body>
+</html>
